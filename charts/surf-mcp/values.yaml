@@ -1,26 +1,37 @@
 replicaCount: 1
 
 image:
-  repository: surf-mcp-server
+  repository: ghcr.io/steph76k/surf-mcp-server
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: ClusterIP
   port: 8000
 
 ingress:
-  enabled: false
-  className: ""
+  enabled: true
+  className: traefik
   hosts:
-    - host: surf-mcp.local
+    - host: surf-mcp.rke2-cluster1.berger.ph
       paths:
         - path: /
           pathType: Prefix
 
-resources: {}
+resources:
+  requests:
+    cpu: 50m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
 
-env: []
+env:
+  - name: WORLDTIDES_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: surf-mcp
+        key: worldtides-api-key
 
 spotData:
   configMap:
