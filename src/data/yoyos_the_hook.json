@@ -1,0 +1,41 @@
+{
+  "spot_id": "yoyos_the_hook",
+  "name": "Yoyo's - The Hook",
+  "country": "Indonesia",
+  "island": "Sumbawa",
+  "region": "West Sumbawa",
+  "coordinates": {
+    "lat": -8.974722222,
+    "lon": 116.72972
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["SW", "W"],
+      "min_ft": 3,
+      "max_ft": 8
+    },
+    "wind": {
+      "offshore": ["NW", "N"]
+    },
+    "tide": ["low", "mid", "high"]
+  },
+  "wave": {
+    "direction": "right",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 7,
+    "localism": 2,
+    "risk": 5,
+    "fun": 8
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "Offshore in the wet season; early morning sessions are usually best during dry season trade winds.",
+  "description": "Yoyo's - The Hook is a consistent right-hand reef break in West Sumbawa with long, powerful and rippable walls. It breaks into a defined deep channel, making entry and exit more predictable than nearby The Wedge. It works through all tides and is a reliable option when SW to W swell combines with NW to N wind.",
+  "hazards": [
+    "reef on lower tides",
+    "crowded lineup on good days",
+    "dry season onshore trade winds",
+    "powerful sections when the swell is bigger"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "spot_id": "uluwatu_outside_corner",
+  "name": "Uluwatu - Outside Corner",
+  "country": "Indonesia",
+  "region": "Bali - Bukit Peninsula",
+  "coordinates": {
+    "lat": -8.83,
+    "lon": 115.08
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["S", "SW"],
+      "min_ft": 6,
+      "max_ft": null
+    },
+    "wind": {
+      "offshore": ["SE"]
+    },
+    "tide": ["low", "mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 4,
+    "localism": 5,
+    "risk": 9,
+    "fun": 6
+  },
+  "surfer_level": "advanced",
+  "notes": "One of Bali's premier big-wave spots. Best left to expert surfers with suitable equipment.",
+  "description": "Uluwatu - Outside Corner is the big-wave section of Uluwatu, breaking when the swell is double overhead or larger. On the right swells it can stand up far out on the reef and peel for more than 100 meters. It requires commitment, strong paddling and the right board, especially when offshore trade winds make entry harder.",
+  "hazards": [
+    "serious big-wave conditions",
+    "strong offshore wind on takeoff",
+    "powerful reef break",
+    "strong currents near the cave",
+    "difficult high tide exit"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+    "spot_id": "cobblestones_right",
+    "name": "Cobblestones Right",
+    "country": "Indonesia",
+    "island": "Sumbawa",
+    "region": "Lakey",
+    "coordinates": {
+        "lat": -8.8235,
+        "lon": 118.3790
+        },
+    "conditions": {
+      "swell": {
+        "directions": ["S", "SW"],
+        "min_ft": 3,
+        "max_ft": 8
+      },
+      "wind": {
+        "offshore": ["E", "NE"]
+      },
+      "tide": ["mid", "high"]
+    },
+    "wave": {
+      "direction": "right",
+      "type": "reef"
+    },
+    "ratings": {
+      "crowd": 3,
+      "localism": 1,
+      "risk": 3,
+      "fun": 7.5
+    },
+    "surfer_level": ["intermediate"],
+    "notes": "Mellow alternative to Lakey Peak",
+    "description": "Cobblestones Right is a fun, mellow right-hand reef break that peels over a combination of reef and sand bottom. It’s a user-friendly wave, ideal for flowy carves and playful lines rather than barrels. The wave starts with a soft roll-in, then walls up for open-face turns before tapering off into the deeper channel. On a good swell, it can hold size and provide long, rippable walls.",
+    "hazards": [
+        "strong rip current",
+        "shallow reef",
+        "long staircase access",
+        "can get very fast and hollow"
+      ]
+  }

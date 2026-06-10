@@ -1,0 +1,42 @@
+{
+  "spot_id": "uluwatu_the_peak",
+  "name": "Uluwatu - The Peak",
+  "country": "Indonesia",
+  "island": "Bali",
+  "region": "Uluwatu",
+  "coordinates": {
+    "lat": -8.816633,
+    "lon": 115.08625
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["S", "SW"],
+      "min_ft": 1,
+      "max_ft": 6
+    },
+    "wind": {
+      "offshore": ["SE"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 10,
+    "localism": 9,
+    "risk": 6,
+    "fun": 9
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "At high tide, aim south of the cave when coming in. Lower tide gets shallow and can close out.",
+  "description": "Uluwatu - The Peak is the main peak directly in front of the Uluwatu cave. It is a reliable dry-season reef wave that works best on mid to high tide, producing powerful barrelling takeoffs and bowling left-hand walls over the coral platform. There can be short rights back toward the cliff, but the main wave is a left.",
+  "hazards": [
+    "very heavy crowds",
+    "sharp coral reef",
+    "shallow low tide sections",
+    "strong currents around the cave",
+    "difficult high tide exit"
+  ]
+}

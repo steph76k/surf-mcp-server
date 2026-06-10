@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "surf-mcp.fullname" . }}
+  labels:
+    {{- include "surf-mcp.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "surf-mcp.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "surf-mcp.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: surf-mcp
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+          env:
+            {{- toYaml .Values.env | nindent 12 }}
+          {{- if .Values.spotData.configMap.enabled }}
+          volumeMounts:
+            - name: spot-data
+              mountPath: /app/data
+          {{- end }}
+      {{- if .Values.spotData.configMap.enabled }}
+      volumes:
+        - name: spot-data
+          configMap:
+            name: {{ default (printf "%s-spots" (include "surf-mcp.fullname" .)) .Values.spotData.configMap.name }}
+      {{- end }}

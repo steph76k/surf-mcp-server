@@ -1,0 +1,41 @@
+{
+  "spot_id": "uluwatu_racetracks",
+  "name": "Uluwatu - Racetracks",
+  "country": "Indonesia",
+  "region": "Bali - Bukit Peninsula",
+  "coordinates": {
+    "lat": -8.83,
+    "lon": 115.08
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["S", "SW"],
+      "min_ft": 2,
+      "max_ft": 5
+    },
+    "wind": {
+      "offshore": ["SE"]
+    },
+    "tide": ["low"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 10,
+    "localism": 9,
+    "risk": 9,
+    "fun": 9
+  },
+  "surfer_level": "advanced",
+  "notes": "Very shallow and fastest on lower tides. Larger swells can make Outside Corner affect the shape.",
+  "description": "Uluwatu - Racetracks is a fast, hollow and shallow left-hand reef section that comes alive on lower tides. On a lined-up south swell it can run for over 100 meters with long barrel sections. The wave gets shallower as it runs down the reef, so it is best suited to advanced surfers.",
+  "hazards": [
+    "very shallow reef",
+    "fast hollow barrels",
+    "crowded lineup",
+    "difficult exit on incoming tide",
+    "sharp coral"
+  ]
+}

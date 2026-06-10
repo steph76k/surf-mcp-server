@@ -1,0 +1,43 @@
+{
+  "spot_id": "airport_right",
+  "name": "Airport Right",
+  "country": "Indonesia",
+  "island": "Bali",
+  "region": "Airport Reefs",
+  "coordinates": {
+    "lat": -8.753302,
+    "lon": 115.152296
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["S", "SSW", "SW"],
+      "min_ft": 2,
+      "max_ft": 8
+    },
+    "wind": {
+      "offshore": ["no wind", "light wind"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "right",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 8,
+    "localism": 5,
+    "risk": 7,
+    "fun": 9
+  },
+  "surfer_level": ["intermediate", "advanced", "expert"],
+  "notes": "Best on clean early mornings in the dry season. Access is by local boat from Pantai Kedonganan or Pantai Jerman.",
+  "description": "Airport Right is a long right-hand reef wave off the end of Bali's international runway. It breaks over coral and can deliver fast walls, hollow sections and long rides when the swell, tide and wind line up. Smaller days can be playful for confident intermediates, while bigger days become more powerful, shallow and demanding.",
+  "hazards": [
+    "sharp coral reef",
+    "shallow end section",
+    "murky water",
+    "heavy crowd",
+    "boat traffic",
+    "punishing paddle after missed waves"
+  ]
+}

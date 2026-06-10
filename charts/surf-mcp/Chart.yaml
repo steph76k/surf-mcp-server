@@ -1,0 +1,6 @@
+apiVersion: v2
+name: surf-mcp
+description: Helm chart for the Surf MCP Server
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

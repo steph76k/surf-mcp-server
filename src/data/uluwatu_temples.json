@@ -1,0 +1,42 @@
+{
+  "spot_id": "uluwatu_temples",
+  "name": "Uluwatu - Temples",
+  "country": "Indonesia",
+  "island": "Bali",
+  "region": "Uluwatu",
+  "coordinates": {
+    "lat": -8.828088,
+    "lon": 115.084095
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["S", "SW"],
+      "min_ft": 1,
+      "max_ft": 6
+    },
+    "wind": {
+      "offshore": ["SE"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 9,
+    "localism": 7,
+    "risk": 8,
+    "fun": 8
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "The double-up sections offer the best barrels. Mid to high tide is preferred.",
+  "description": "Uluwatu - Temples is a powerful left-hand reef wave beneath the cliffs near Uluwatu Temple. It can produce thick double-up barrels and performance walls for up to around 100 meters before shutting down closer to The Peak. It is most organized on mid to high tide and can become messy when low tide exposes the reef and bombie.",
+  "hazards": [
+    "shallow reef on low tide",
+    "heavy double-up barrels",
+    "strong current along the cliffs",
+    "crowded lineup",
+    "long paddle or reef walk access"
+  ]
+}

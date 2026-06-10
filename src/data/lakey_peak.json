@@ -1,0 +1,42 @@
+{
+  "spot_id": "lakey_peak",
+  "name": "Lakey Peak",
+  "country": "Indonesia",
+  "island": "Sumbawa",
+  "region": "Lakey",
+  "coordinates": {
+    "lat": -8.810277778,
+    "lon": 118.3825
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["S", "SW"],
+      "min_ft": 1,
+      "max_ft": 8
+    },
+    "wind": {
+      "offshore": ["SE", "E", "NE"]
+    },
+    "tide": ["low", "mid", "high"]
+  },
+  "wave": {
+    "direction": "left & right",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 8,
+    "localism": 8,
+    "risk": 5,
+    "fun": 10
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "The right needs more tide; the left is more consistent and breaks on all tides.",
+  "description": "Lakey Peak is a world-class reef A-frame in Central Sumbawa with both a left and a right from the same peak. The left is usually the more consistent option, offering rippable walls and barrel sections as the swell builds. The right can also be excellent but generally needs mid to high tide and more precise positioning behind the peak.",
+  "hazards": [
+    "sharp reef",
+    "shallow low tide sections",
+    "heavy crowds",
+    "local rippers",
+    "confusing left and right takeoff priority"
+  ]
+}

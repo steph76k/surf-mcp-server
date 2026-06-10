@@ -1,0 +1,42 @@
+{
+    "spot_id": "green_bowl",
+    "name": "Green Bowl",
+    "country": "Indonesia",
+    "island": "Bali",
+    "region": "Ungasan",
+    "coordinates": {
+      "lat": -8.851288889,
+      "lon": 115.1704
+    },
+    "conditions": {
+      "swell": {
+        "directions": ["S", "SW", "SSW"],
+        "min_ft": 1,
+        "max_ft": 10
+      },
+      "wind": {
+        "offshore": ["N", "NE", "NW"]
+      },
+      "tide": ["low", "mid", "high"]
+    },
+    "wave": {
+      "direction": "right",
+      "type": "reef"
+    },
+    "ratings": {
+      "crowd": 5,
+      "localism": 2,
+      "risk": 7,
+      "fun": 8
+    },
+    "surfer_level": ["advanced"],
+    "notes": "Avoid hight tide because of the crazy backwash",
+    "description": "Green Bowl is a fast and hollow reef break on Bali's Bukit Peninsula. The wave offers barrel sections, a deep-water channel for paddling out and a relatively uncrowded lineup compared to the more famous Bukit spots. Strong currents, shallow reef and a long stair access make it best suited to experienced surfers.",
+    "hazards": [
+      "strong currents",
+      "shallow reef",
+      "long stair access",
+      "crazy backwash at high tide"
+    ]
+
+  }

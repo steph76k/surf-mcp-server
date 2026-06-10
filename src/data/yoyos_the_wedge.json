@@ -1,0 +1,41 @@
+{
+  "spot_id": "yoyos_the_wedge",
+  "name": "Yoyo's - The Wedge",
+  "country": "Indonesia",
+  "island": "Sumbawa",
+  "region": "West Sumbawa",
+  "coordinates": {
+    "lat": -8.974722222,
+    "lon": 116.72972
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["SW", "W"],
+      "min_ft": 3,
+      "max_ft": 8
+    },
+    "wind": {
+      "offshore": ["NW", "N"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "right",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 3,
+    "localism": 1,
+    "risk": 6,
+    "fun": 7
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "Less consistent than The Hook and has no defined channel. Best at mid to high tide.",
+  "description": "Yoyo's - The Wedge is a right-hand reef wave in West Sumbawa, located up the reef from The Hook. It is shaped by swell refracting off the cliffs, giving it a powerful, unusual setup with rippable sections when the conditions line up. The wave is generally quieter than The Hook, but it is less predictable and requires careful positioning because there is no clear channel.",
+  "hazards": [
+    "no defined channel",
+    "sharp coral reef",
+    "lower tide reef exposure",
+    "less predictable takeoff zone"
+  ]
+}

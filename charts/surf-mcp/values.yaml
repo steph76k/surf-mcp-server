@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: surf-mcp-server
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: false
+  className: ""
+  hosts:
+    - host: surf-mcp.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources: {}
+
+env: []
+
+spotData:
+  configMap:
+    enabled: false
+    name: ""

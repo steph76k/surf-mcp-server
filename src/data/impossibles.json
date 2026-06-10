@@ -1,0 +1,43 @@
+{
+  "spot_id": "impossibles",
+  "name": "Impossibles",
+  "country": "Indonesia",
+  "island": "Bali",
+  "region": "Uluwatu",
+  "coordinates": {
+    "lat": -8.807,
+    "lon": 115.108
+  },
+  "conditions": {
+    "swell": {
+      "directions": ["SW", "W"],
+      "min_ft": 6,
+      "max_ft": 12
+    },
+    "wind": {
+      "offshore": ["SE"]
+    },
+    "tide": ["low", "mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 4,
+    "localism": 3,
+    "risk": 8,
+    "fun": 7
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "First peak prefers mid to high tide; second and third peaks can work lower. Best when the swell has enough west in it and the wind is offshore.",
+  "description": "Impossibles is a long, fast left-hand reef break between Padang Padang and Bingin. The reef spans several sections, with Top, Middle and End peaks offering different parts of the ride. Many waves outrun surfers, but with the right wave selection it can produce some of the longest rides in Bali.",
+  "hazards": [
+    "very fast sections",
+    "sharp coral reef",
+    "difficult low tide paddle out",
+    "strong inside sweep toward Bingin on bigger days",
+    "hard low tide exit",
+    "not suitable for beginners"
+  ]
+}

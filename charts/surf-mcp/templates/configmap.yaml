@@ -1,0 +1,10 @@
+{{- if .Values.spotData.configMap.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ default (printf "%s-spots" (include "surf-mcp.fullname" .)) .Values.spotData.configMap.name }}
+  labels:
+    {{- include "surf-mcp.labels" . | nindent 4 }}
+data:
+  README: "Create this ConfigMap with spot JSON files mounted at /app/data."
+{{- end }}
