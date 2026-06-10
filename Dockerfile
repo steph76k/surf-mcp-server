@@ -5,11 +5,14 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY pyproject.toml README.md ./
+RUN pip install --no-cache-dir uv
+
+COPY pyproject.toml uv.lock README.md ./
+
+RUN uv sync --frozen
+
 COPY src ./src
-COPY data ./data
 
-RUN python -m pip install --no-cache-dir --upgrade pip \
-    && python -m pip install --no-cache-dir .
+EXPOSE 8000
 
-CMD ["python", "src/server.py"]
+CMD ["uv", "run", "python", "src/server.py"]

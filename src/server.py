@@ -3,7 +3,13 @@ from spots import get_spot, get_all_spots
 from forecast import lookup_forecast, lookup_tides, lookup_conditions
 from typing import Optional
 
-mcp = FastMCP("surf")
+
+# Host und Port direkt bei der Initialisierung übergeben
+mcp = FastMCP(
+    "Surf MCP Server",
+    host="0.0.0.0",
+    port=8000
+)
 
 def _matches(value, query: str) -> bool:
     if isinstance(value, list):
