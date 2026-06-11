@@ -17,9 +17,5 @@ def get_marine_forecast(lat: float, lon: float):
     )
 
     response.raise_for_status()
-    
-    raw = get_marine_forecast(lat, lon)
-    print(raw["timezone"])
-    return normalize_open_meteo(raw)
 
     return response.json()

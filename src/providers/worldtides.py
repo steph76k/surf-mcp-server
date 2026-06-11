@@ -27,6 +27,4 @@ def get_tides(lat: float, lon: float):
 
     response.raise_for_status()
 
-    print(response.url)
-
     return response.json()

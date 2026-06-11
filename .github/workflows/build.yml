@@ -30,6 +30,12 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository }}
 
+      - name: Run Tests
+        env:
+          WORLDTIDES_API_KEY: ${{ secrets.WORLDTIDES_API_KEY }}
+        run: |
+          python -m unittest discover tests -v
+
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
