@@ -102,9 +102,9 @@ def classify_tide(
     return "high"
 
 
-def normalize_tides(data: dict) -> list:
+def normalize_tides(data: dict) -> dict:
 
-    result = []
+    heights_result = []
 
     heights = data["heights"]
 
@@ -118,16 +118,13 @@ def normalize_tides(data: dict) -> list:
         for h in heights
     )
 
-    # WorldTides liefert 30-Minuten-Werte
-    # Alle 6 Werte = alle 3 Stunden
+    for h in heights:
 
-    for i in range(0, len(heights), 6):
+        tide_height_m = h["height"]
 
-        tide_height_m = heights[i]["height"]
-
-        result.append(
+        heights_result.append(
             {
-                "time": heights[i]["date"],
+                "time": h["date"],
                 "tide_height_ft": round(
                     tide_height_m * 3.28084,
                     1
@@ -140,7 +137,27 @@ def normalize_tides(data: dict) -> list:
             }
         )
 
-    return result
+    extremes_result = []
+
+    for e in data.get("extremes", []):
+
+        extremes_result.append(
+            {
+                "time": e["date"],
+                "type": e["type"].lower(),
+                "height_ft": round(
+                    e["height"] * 3.28084,
+                    1
+                )
+            }
+        )
+
+    return {
+        "timezone": data.get("timezone"),
+        "datum": data.get("responseDatum"),
+        "extremes": extremes_result,
+        "heights": heights_result
+    }
 
 def lookup_tides(
     spot_id: str
@@ -158,29 +175,37 @@ def lookup_tides(
 
     return normalize_tides(raw)
 
-def parse_time(ts):
+def parse_time(ts: str):
 
-    if "+" in ts:
+    try:
+        return datetime.fromisoformat(ts)
+    except ValueError:
         return datetime.strptime(
             ts,
-            "%Y-%m-%dT%H:%M%z"
+            "%Y-%m-%dT%H:%M"
+        ).replace(
+            tzinfo=timezone.utc
         )
-
-    return datetime.strptime(
-        ts,
-        "%Y-%m-%dT%H:%M"
-    ).replace(
-        tzinfo=timezone.utc
-    )
 
 def lookup_conditions(
     spot_id: str
 ):
 
-    forecast = lookup_forecast(spot_id)
-    tides = lookup_tides(spot_id)
+    spot = get_spot(
+        spot_id
+    )
 
-    result = []
+    forecast = lookup_forecast(
+        spot_id
+    )
+
+    tides = lookup_tides(
+        spot_id
+    )
+
+    tide_heights = tides["heights"]
+
+    conditions = []
 
     for forecast_item in forecast:
 
@@ -189,7 +214,7 @@ def lookup_conditions(
         )
 
         closest_tide = min(
-            tides,
+            tide_heights,
             key=lambda tide: abs(
                 parse_time(
                     tide["time"]
@@ -197,12 +222,82 @@ def lookup_conditions(
             )
         )
 
-        result.append(
+        conditions.append(
             {
-                **forecast_item,
-                "tide_height_ft": closest_tide["tide_height_ft"],
-                "tide_state": closest_tide["tide_state"]
+                "time":
+                    forecast_item["time"],
+
+                "wave_height_ft":
+                    forecast_item["wave_height_ft"],
+
+                "wave_period_s":
+                    forecast_item["wave_period_s"],
+
+                "swell_direction":
+                    forecast_item["swell_direction"],
+
+                "swell_direction_deg":
+                    forecast_item["swell_direction_deg"],
+
+                "tide_height_ft":
+                    closest_tide["tide_height_ft"],
+
+                "tide_state":
+                    closest_tide["tide_state"]
             }
         )
 
-    return result
+    return {
+        "spot": {
+            "spot_id":
+                spot["spot_id"],
+
+            "name":
+                spot["name"],
+
+            "country":
+                spot["country"],
+
+            "island":
+                spot["island"],
+
+            "region":
+                spot["region"],
+
+            "coordinates":
+                spot["coordinates"],
+
+            "conditions":
+                spot["conditions"],
+
+            "wave":
+                spot["wave"],
+
+            "ratings":
+                spot["ratings"],
+
+            "surfer_level":
+                spot["surfer_level"],
+
+            "notes":
+                spot["notes"],
+
+            "description":
+                spot["description"],
+
+            "hazards":
+                spot["hazards"]
+        },
+
+        "timezone":
+            tides["timezone"],
+
+        "datum":
+            tides["datum"],
+
+        "tide_extremes":
+            tides["extremes"],
+
+        "conditions":
+            conditions
+    }

@@ -2,26 +2,31 @@ import os
 import requests
 
 
-def get_tides(
-    lat: float,
-    lon: float
-):
+def get_tides(lat: float, lon: float):
 
     api_key = os.environ["WORLDTIDES_API_KEY"]
 
-    url = (
-        "https://www.worldtides.info/api/v3"
-        f"?heights"
-        f"&lat={lat}"
-        f"&lon={lon}"
-        f"&key={api_key}"
-    )
+    params = {
+        "heights": "",
+        "extremes": "",
+        "datum": "CD",
+        "localtime": "",
+        "timezone": "",
+        "step":3600,
+        "days": 1,
+        "lat": lat,
+        "lon": lon,
+        "key": api_key,
+    }
 
     response = requests.get(
-        url,
-        timeout=10
+        "https://www.worldtides.info/api/v3",
+        params=params,
+        timeout=10,
     )
 
     response.raise_for_status()
+
+    print(response.url)
 
     return response.json()

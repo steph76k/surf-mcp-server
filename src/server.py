@@ -211,7 +211,31 @@ def get_conditions(
     spot_id: str
 ) -> list:
     """
-    Get combined surf conditions.
+    Get complete surf conditions for a surf spot.
+
+    This is the primary tool for surf analysis.
+
+    Provides:
+
+    - wave height
+    - wave period
+    - swell direction
+    - tide height
+    - tide state
+    - surfer level
+    - preferred tides
+    - offshore wind directions
+    - preferred swell directions
+    - hazards
+    - local notes
+    - crowd rating
+    - localism rating
+    - risk rating
+
+    Use this tool before recommending any surf spot.
+
+    Always compare current conditions with the preferred
+    swell, wind and tide requirements of the spot.
     """
 
     return lookup_conditions(
