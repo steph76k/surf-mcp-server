@@ -177,15 +177,18 @@ def lookup_tides(
 
 def parse_time(ts: str):
 
-    try:
-        return datetime.fromisoformat(ts)
-    except ValueError:
-        return datetime.strptime(
-            ts,
-            "%Y-%m-%dT%H:%M"
-        ).replace(
+    dt = datetime.fromisoformat(ts)
+
+    print("PARSE:", ts)
+    print("TZINFO:", dt.tzinfo)
+
+    if dt.tzinfo is None:
+        print("ADDING UTC")
+        dt = dt.replace(
             tzinfo=timezone.utc
         )
+
+    return dt
 
 def lookup_conditions(
     spot_id: str
