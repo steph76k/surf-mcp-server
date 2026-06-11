@@ -8,9 +8,13 @@ def get_marine_forecast(lat: float, lon: float):
         f"?latitude={lat}"
         f"&longitude={lon}"
         "&hourly=wave_height,wave_direction,wave_period"
+        "&timezone=auto"
     )
 
-    response = requests.get(url, timeout=10)
+    response = requests.get(
+        url,
+        timeout=10
+    )
 
     response.raise_for_status()
 
