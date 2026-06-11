@@ -1,4 +1,4 @@
-from providers.http import get_json
+import requests
 
 
 def get_marine_forecast(lat: float, lon: float):
@@ -11,4 +11,11 @@ def get_marine_forecast(lat: float, lon: float):
         "&timezone=auto"
     )
 
-    return get_json(url)
+    response = requests.get(
+        url,
+        timeout=10
+    )
+
+    response.raise_for_status()
+
+    return response.json()

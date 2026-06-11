@@ -1,6 +1,6 @@
 import os
 
-from providers.http import get_json
+import requests
 
 
 def get_tides(lat: float, lon: float):
@@ -20,7 +20,12 @@ def get_tides(lat: float, lon: float):
         "key": api_key,
     }
 
-    return get_json(
+    response = requests.get(
         "https://www.worldtides.info/api/v3",
         params=params,
+        timeout=10,
     )
+
+    response.raise_for_status()
+
+    return response.json()
