@@ -8,7 +8,7 @@
     "lat": -8.828088,
     "lon": 115.084095
   },
-  "conditions": {
+  "preferred_conditions": {
     "swell": {
       "directions": ["S", "SW"],
       "min_ft": 1,

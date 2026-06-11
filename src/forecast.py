@@ -179,11 +179,7 @@ def parse_time(ts: str):
 
     dt = datetime.fromisoformat(ts)
 
-    print("PARSE:", ts)
-    print("TZINFO:", dt.tzinfo)
-
     if dt.tzinfo is None:
-        print("ADDING UTC")
         dt = dt.replace(
             tzinfo=timezone.utc
         )
@@ -215,12 +211,6 @@ def lookup_conditions(
         forecast_time = parse_time(
             forecast_item["time"]
         )
-
-        print(type(parse_time(forecast_item["time"])))
-        print(parse_time(forecast_item["time"]).tzinfo)
-
-        print(type(parse_time(tide_heights[0]["time"])))
-        print(parse_time(tide_heights[0]["time"]).tzinfo)
 
         closest_tide = min(
             tide_heights,
@@ -276,8 +266,8 @@ def lookup_conditions(
             "coordinates":
                 spot["coordinates"],
 
-            "conditions":
-                spot["conditions"],
+            "preferred_conditions":
+                spot["preferred_conditions"],
 
             "wave":
                 spot["wave"],
@@ -307,6 +297,6 @@ def lookup_conditions(
         "tide_extremes":
             tides["extremes"],
 
-        "conditions":
+        "forecast_conditions":
             conditions
     }

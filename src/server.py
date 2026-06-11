@@ -54,7 +54,11 @@ def list_spots(region: Optional[str] = None) -> list:
             "name": spot["name"],
             "country": spot["country"],
             "island": spot["island"],
-            "region": spot["region"]
+            "region": spot["region"],
+            "wave_type": spot["wave"]["type"],
+            "surfer_level": spot["surfer_level"],
+            "fun": spot["ratings"]["fun"],
+            "risk": spot["ratings"]["risk"]
         }
         for spot in spots
     ]
@@ -110,7 +114,7 @@ def find_spots(
         if tide:
             tides = [
                 t.lower()
-                for t in spot["conditions"]["tide"]
+                for t in spot["preferred_conditions"]["tide"]
             ]
 
             if tide.lower() not in tides:
@@ -120,7 +124,7 @@ def find_spots(
         if wind:
             offshore = [
                 w.upper()
-                for w in spot["conditions"]["wind"]["offshore"]
+                for w in spot["preferred_conditions"]["wind"]["offshore"]
             ]
 
             if wind.upper() not in offshore:
@@ -130,7 +134,7 @@ def find_spots(
         if swell_direction:
             swell_dirs = [
                 d.upper()
-                for d in spot["conditions"]["swell"]["directions"]
+                for d in spot["preferred_conditions"]["swell"]["directions"]
             ]
 
             if swell_direction.upper() not in swell_dirs:
@@ -139,7 +143,7 @@ def find_spots(
         # Swell Height
         if swell_height_ft is not None:
 
-            swell = spot["conditions"]["swell"]
+            swell = spot["preferred_conditions"]["swell"]
 
             if (
                 swell_height_ft < swell["min_ft"]

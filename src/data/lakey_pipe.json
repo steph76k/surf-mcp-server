@@ -8,7 +8,7 @@
     "lat": -8.810277778,
     "lon": 118.3825
   },
-  "conditions": {
+  "preferred_conditions": {
     "swell": {
       "directions": ["S", "SW"],
       "min_ft": 2,
@@ -31,7 +31,7 @@
   },
   "surfer_level": ["beginner", "intermediate", "advanced", "expert"],
   "notes": "Best around mid tide. The inside on small high tides can suit advancing beginners, but bigger days are not beginner friendly.",
-  "description": "Lakey Pipe is a left-hand reef barrel across the channel south of Lakey Peak. The wave wraps around the coral shelf, offering backdoor barrel opportunities before running into the channel. It is often less crowded than Lakey Peak, though the takeoff zone can still get tight when conditions are good.",
+  "description": "Lakey Pipe is a left-hand reef barrel across the channel south of Lakey Peak. The wave wraps around the coral shelf, offering backdoor barrel opportunities before running into the channel. It is often less crowded than Lakey Peak, though the takeoff zone can still get tight when preferred_conditions are good.",
   "hazards": [
     "sharp shallow reef",
     "heavy barrels when bigger",
