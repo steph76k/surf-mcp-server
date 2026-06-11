@@ -216,7 +216,8 @@ def parse_time(ts: str):
     return dt
 
 def lookup_conditions(
-    spot_id: str
+    spot_id: str,
+    provider: str = "swellcloud"
 ):
 
     spot = get_spot(
@@ -224,7 +225,8 @@ def lookup_conditions(
     )
 
     forecast = lookup_forecast(
-        spot_id
+        spot_id,
+        provider
     )
 
     tides = lookup_tides(

@@ -191,9 +191,10 @@ def search_spots(query: str) -> list:
     ]
 
 @mcp.tool()
-def get_forecast(
+@mcp.tool()
+def get_conditions(
     spot_id: str,
-    provider: str = "open_meteo"
+    provider: str = "swellcloud"
 ) -> dict:
     """
     Get marine forecast for a surf spot.
