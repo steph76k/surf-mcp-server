@@ -6,5 +6,5 @@ metadata:
   labels:
     {{- include "surf-mcp.labels" . | nindent 4 }}
 data:
-  README: "Create this ConfigMap with spot JSON files mounted at /app/data."
+  README: "Create this ConfigMap with spot JSON files mounted at /app/src/data."
 {{- end }}

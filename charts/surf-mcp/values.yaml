@@ -21,10 +21,10 @@ ingress:
 resources:
   requests:
     cpu: 50m
-    memory: 128Mi
+    memory: 256Mi
   limits:
     cpu: 500m
-    memory: 512Mi
+    memory: 1Gi
 
 env:
   - name: WORLDTIDES_API_KEY

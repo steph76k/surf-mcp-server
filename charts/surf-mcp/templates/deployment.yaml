@@ -42,5 +42,12 @@ spec:
           {{- if .Values.spotData.configMap.enabled }}
           volumeMounts:
             - name: spot-data
-              mountPath: /app/data
+              mountPath: /app/src/data
+              readOnly: true
           {{- end }}
+      {{- if .Values.spotData.configMap.enabled }}
+      volumes:
+        - name: spot-data
+          configMap:
+            name: {{ default (printf "%s-spots" (include "surf-mcp.fullname" .)) .Values.spotData.configMap.name }}
+      {{- end }}
