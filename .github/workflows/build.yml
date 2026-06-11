@@ -35,6 +35,8 @@ jobs:
           WORLDTIDES_API_KEY: ${{ secrets.WORLDTIDES_API_KEY }}
           SWELLCLOUD_API_KEY: ${{ secrets.SWELLCLOUD_API_KEY }}
         run: |
+          echo "WORLDTIDES length: ${#WORLDTIDES_API_KEY}"
+          echo "SWELLCLOUD length: ${#SWELLCLOUD_API_KEY}"
           python -m unittest discover tests -v
 
       - name: Build and Push
