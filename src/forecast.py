@@ -213,6 +213,12 @@ def lookup_conditions(
             forecast_item["time"]
         )
 
+        print(type(parse_time(forecast_item["time"])))
+        print(parse_time(forecast_item["time"]).tzinfo)
+
+        print(type(parse_time(tide_heights[0]["time"])))
+        print(parse_time(tide_heights[0]["time"]).tzinfo)
+
         closest_tide = min(
             tide_heights,
             key=lambda tide: abs(
