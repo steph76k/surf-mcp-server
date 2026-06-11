@@ -70,7 +70,7 @@ def normalize_open_meteo(
 
 def lookup_forecast(
     spot_id: str,
-    provider: str = "open_meteo"
+    provider: str = "swellcloud"
 ):
 
     spot = get_spot(spot_id)
@@ -199,6 +199,12 @@ def lookup_tides(
 
 def parse_time(ts: str):
 
+    if ts.endswith("Z"):
+        ts = ts.replace(
+            "Z",
+            "+00:00"
+        )
+
     dt = datetime.fromisoformat(ts)
 
     if dt.tzinfo is None:
@@ -259,6 +265,31 @@ def lookup_conditions(
 
                 "swell_direction_deg":
                     forecast_item["swell_direction_deg"],
+
+                "wind_speed_mph":
+                    forecast_item.get("wind_speed_mph"),
+
+                "wind_direction":
+                    forecast_item.get("wind_direction"),
+
+                "wind_direction_deg":
+                    forecast_item.get("wind_direction_deg"),
+
+                "secondary_swell_ft":
+                    forecast_item.get("secondary_swell_ft"),
+
+                "secondary_swell_direction_deg":
+                    forecast_item.get(
+                        "secondary_swell_direction_deg"
+                    ),
+
+                "wind_wave_ft":
+                    forecast_item.get("wind_wave_ft"),
+
+                "wind_wave_direction_deg":
+                    forecast_item.get(
+                        "wind_wave_direction_deg"
+                    ),
 
                 "tide_height_ft":
                     closest_tide["tide_height_ft"],

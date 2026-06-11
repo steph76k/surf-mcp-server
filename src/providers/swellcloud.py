@@ -1,12 +1,15 @@
-# providers/swellcloud.py
-
 import os
-from datetime import datetime, timedelta, timezone
+import requests
 
-from providers.http import get_json
+from datetime import datetime
+from datetime import timedelta
+from datetime import timezone
 
 
-def get_swellcloud_forecast(lat: float, lon: float):
+def get_swellcloud_forecast(
+    lat: float,
+    lon: float
+):
 
     api_key = os.environ["SWELLCLOUD_API_KEY"]
 
@@ -24,14 +27,23 @@ def get_swellcloud_forecast(lat: float, lon: float):
             "ww_hs,ww_dp,"
             "wndspd,wnddir"
         ),
-        "start": start.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "end": end.strftime("%Y-%m-%dT%H:%M:%SZ")
+        "start": start.strftime(
+            "%Y-%m-%dT%H:%M:%SZ"
+        ),
+        "end": end.strftime(
+            "%Y-%m-%dT%H:%M:%SZ"
+        )
     }
 
-    return get_json(
+    response = requests.get(
         "https://api.swellcloud.net/v1/point",
         params=params,
         headers={
             "X-API-Key": api_key
-        }
+        },
+        timeout=30
     )
+
+    response.raise_for_status()
+
+    return response.json()
