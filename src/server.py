@@ -191,12 +191,18 @@ def search_spots(query: str) -> list:
     ]
 
 @mcp.tool()
-def get_forecast(spot_id: str) -> dict:
+def get_forecast(
+    spot_id: str,
+    provider: str = "open_meteo"
+) -> dict:
     """
     Get marine forecast for a surf spot.
     """
 
-    return lookup_forecast(spot_id)
+    return lookup_forecast(
+    spot_id,
+    provider
+)
 
 @mcp.tool()
 def get_tides(

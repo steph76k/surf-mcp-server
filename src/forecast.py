@@ -1,6 +1,7 @@
 from spots import get_spot
 from providers.open_meteo import get_marine_forecast
 from providers.worldtides import get_tides
+from providers.swellcloud import get_swellcloud_forecast
 from datetime import datetime, timezone
 
 def degrees_to_direction(deg: float) -> str:
@@ -67,16 +68,37 @@ def normalize_open_meteo(
     return result
 
 
-def lookup_forecast(spot_id: str):
+def lookup_forecast(
+    spot_id: str,
+    provider: str = "open_meteo"
+):
 
     spot = get_spot(spot_id)
 
     lat = spot["coordinates"]["lat"]
     lon = spot["coordinates"]["lon"]
 
-    raw = get_marine_forecast(lat, lon)
+    if provider == "open_meteo":
 
-    return normalize_open_meteo(raw)
+        raw = get_marine_forecast(
+            lat,
+            lon
+        )
+
+        return normalize_open_meteo(raw)
+
+    if provider == "swellcloud":
+
+        raw = get_swellcloud_forecast(
+            lat,
+            lon
+        )
+
+        return normalize_swellcloud(raw)
+
+    raise ValueError(
+        f"Unknown provider: {provider}"
+    )
 
 def classify_tide(
     height: float,
@@ -300,3 +322,37 @@ def lookup_conditions(
         "forecast_conditions":
             conditions
     }
+
+def normalize_swellcloud(data):
+
+    result = []
+
+    for item in data["data"]:
+
+        result.append(
+            {
+                "time": item["time"],
+
+                "wave_height_ft": item["hs"],
+                "wave_period_s": item["tp"],
+
+                "swell_direction_deg": item["dp"],
+                "swell_direction": degrees_to_direction(
+                    item["dp"]
+                ),
+
+                "wind_speed_mph": item["wndspd"],
+                "wind_direction_deg": item["wnddir"],
+                "wind_direction": degrees_to_direction(
+                    item["wnddir"]
+                ),
+
+                "secondary_swell_ft": item["ss_hs"],
+                "secondary_swell_direction_deg": item["ss_dp"],
+
+                "wind_wave_ft": item["ww_hs"],
+                "wind_wave_direction_deg": item["ww_dp"]
+            }
+        )
+
+    return result
