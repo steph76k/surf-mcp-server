@@ -33,6 +33,12 @@ env:
         name: surf-mcp
         key: worldtides-api-key
 
+  - name: SWELLCLOUD_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: surf-mcp
+        key: swellcloud-api-key
+
 spotData:
   configMap:
     enabled: false

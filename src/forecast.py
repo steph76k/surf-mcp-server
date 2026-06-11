@@ -205,6 +205,7 @@ def parse_time(ts: str):
             "+00:00"
         )
 
+
     dt = datetime.fromisoformat(ts)
 
     if dt.tzinfo is None:
