@@ -3,6 +3,7 @@ from providers.open_meteo import get_marine_forecast
 from providers.worldtides import get_tides
 from providers.swellcloud import get_swellcloud_forecast
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 def degrees_to_direction(deg: float) -> str:
 
@@ -215,6 +216,36 @@ def parse_time(ts: str):
 
     return dt
 
+def to_local_time(
+    timestamp: str,
+    timezone_name: str
+) -> dict:
+
+    dt = parse_time(
+        timestamp
+    )
+
+    local_dt = dt.astimezone(
+        ZoneInfo(
+            timezone_name
+        )
+    )
+
+    return {
+        "time_utc":
+            dt.astimezone(
+                timezone.utc
+            ).isoformat(),
+
+        "time_local":
+            local_dt.isoformat(),
+
+        "local_hour":
+            local_dt.strftime(
+                "%H:%M"
+            )
+    }
+
 def lookup_conditions(
     spot_id: str,
     provider: str = "swellcloud"
@@ -222,6 +253,11 @@ def lookup_conditions(
 
     spot = get_spot(
         spot_id
+    )
+
+    timezone_name = spot.get(
+        "timezone",
+        "UTC"
     )
 
     forecast = lookup_forecast(
@@ -239,6 +275,11 @@ def lookup_conditions(
 
     for forecast_item in forecast:
 
+        forecast_times = to_local_time(
+            forecast_item["time"],
+            timezone_name
+        )
+
         forecast_time = parse_time(
             forecast_item["time"]
         )
@@ -254,8 +295,14 @@ def lookup_conditions(
 
         conditions.append(
             {
-                "time":
-                    forecast_item["time"],
+                "time_utc":
+                    forecast_times["time_utc"],
+
+                "time_local":
+                    forecast_times["time_local"],
+
+                "local_hour":
+                    forecast_times["local_hour"],
 
                 "wave_height_ft":
                     forecast_item["wave_height_ft"],
@@ -302,6 +349,34 @@ def lookup_conditions(
             }
         )
 
+    tide_extremes = []
+
+    for tide_extreme in tides["extremes"]:
+
+        tide_times = to_local_time(
+            tide_extreme["time"],
+            timezone_name
+        )
+
+        tide_extremes.append(
+            {
+                "time_utc":
+                    tide_times["time_utc"],
+
+                "time_local":
+                    tide_times["time_local"],
+
+                "local_hour":
+                    tide_times["local_hour"],
+
+                "type":
+                    tide_extreme["type"],
+
+                "height_ft":
+                    tide_extreme["height_ft"]
+            }
+        )
+
     return {
         "spot": {
             "spot_id":
@@ -315,6 +390,9 @@ def lookup_conditions(
 
             "island":
                 spot["island"],
+
+            "timezone":
+                timezone_name,
 
             "region":
                 spot["region"],
@@ -345,13 +423,16 @@ def lookup_conditions(
         },
 
         "timezone":
+            timezone_name,
+
+        "provider_timezone":
             tides["timezone"],
 
         "datum":
             tides["datum"],
 
         "tide_extremes":
-            tides["extremes"],
+            tide_extremes,
 
         "forecast_conditions":
             conditions

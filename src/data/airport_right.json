@@ -3,6 +3,7 @@
   "name": "Airport Right",
   "country": "Indonesia",
   "island": "Bali",
+  "timezone": "Asia/Makassar",
   "region": "Airport Reefs",
   "coordinates": {
     "lat": -8.753302,

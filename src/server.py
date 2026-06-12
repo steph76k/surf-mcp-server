@@ -362,47 +362,30 @@ def get_conditions(
     spot_id: str
 ) -> list:
     """
-    Get complete surf conditions for a surf spot.
+    PRIMARY SURF ANALYSIS TOOL.
 
-    This is the primary tool for surf analysis.
+    Use this tool whenever surf recommendations
+    or surf spot comparisons are required.
 
-    Combines:
+    This tool already combines:
 
-    Forecast Data:
-    - wave height
-    - wave period
-    - swell direction
-    - wind direction
-    - wind speed
-
-    Tide Data:
-    - tide height
-    - tide state
-    - tide extremes
-
-    Spot Knowledge:
-    - preferred swell directions
-    - preferred wind directions
-    - preferred tides
-    - surfer level
+    - forecast
+    - tides
+    - spot information
+    - preferred conditions
     - hazards
-    - local notes
-    - crowd rating
-    - localism rating
-    - risk rating
+    - surfer level
 
-    Use this tool before making any surf recommendation.
+    In most cases you do NOT need to call:
 
-    Always compare actual forecast conditions
-    with the preferred conditions of the spot.
+    - get_forecast()
+    - get_tides()
+    - get_spot_info()
 
-    Examples:
+    before using this tool.
 
-    - Is Lakey Peak good tomorrow?
-    - Can an intermediate surfer surf Nungas today?
-    - What is the best spot in Sumbawa right now?
-
-    This is the preferred tool for surf decision making.
+    Use get_conditions() as the default tool for
+    surf forecasting and spot recommendations.
     """
 
     return lookup_conditions(

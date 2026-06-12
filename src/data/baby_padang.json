@@ -3,6 +3,7 @@
   "name": "Baby Padang",
   "country": "Indonesia",
   "island": "Bali",
+  "timezone": "Asia/Makassar",
   "region": "Bukit",
   "coordinates": {
     "lat": -8.809,

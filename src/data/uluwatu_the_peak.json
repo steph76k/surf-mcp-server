@@ -3,6 +3,7 @@
   "name": "Uluwatu - The Peak",
   "country": "Indonesia",
   "island": "Bali",
+  "timezone": "Asia/Makassar",
   "region": "Bukit",
   "coordinates": {
     "lat": -8.816633,
