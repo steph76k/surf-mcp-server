@@ -1,0 +1,41 @@
+{
+  "spot_id": "baby_padang",
+  "name": "Baby Padang",
+  "country": "Indonesia",
+  "island": "Bali",
+  "region": "Bukit",
+  "coordinates": {
+    "lat": -8.809,
+    "lon": 115.105
+  },
+  "preferred_conditions": {
+    "swell": {
+      "directions": ["S", "SSW", "SW"],
+      "min_ft": 2,
+      "max_ft": 5
+    },
+    "wind": {
+      "offshore": ["SE"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "left & right",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 8,
+    "localism": 2,
+    "risk": 4,
+    "fun": 8
+  },
+  "surfer_level": ["beginner", "intermediate"],
+  "notes": "Also known as Padang Padang Rights. Mid tide is the most reliable window; high tide is softer and forgiving, while low tide exposes more reef.",
+  "description": "Baby Padang is the sheltered beginner and intermediate wave beside the Padang Padang channel. It breaks smaller and softer than the exposed Bukit reefs, with a short right into the channel and a longer left that can peel toward Impossibles when the swell and tide line up. The channel makes the paddle-out unusually easy for the area.",
+  "hazards": [
+    "shallow reef on low tide",
+    "strong channel current on bigger swells",
+    "heavy beginner crowd",
+    "can become too fast above head high"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "spot_id": "bingin",
+  "name": "Bingin",
+  "country": "Indonesia",
+  "island": "Bali",
+  "region": "Bukit",
+  "coordinates": {
+    "lat": -8.806,
+    "lon": 115.112
+  },
+  "preferred_conditions": {
+    "swell": {
+      "directions": ["S", "SSW", "SW", "WSW"],
+      "min_ft": 3,
+      "max_ft": 8
+    },
+    "wind": {
+      "offshore": ["SE", "E"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 10,
+    "localism": 9,
+    "risk": 8,
+    "fun": 10
+  },
+  "surfer_level": ["advanced", "expert"],
+  "notes": "Mid tide is the safest quality window. Low tide is hollow and dangerous; high tide can still work but may have a stronger rip.",
+  "description": "Bingin is a short, intense left-hand reef barrel on the Bukit Peninsula. The wave breaks close to shore over coral with a tight, competitive takeoff zone, then offers a predictable barrel and a short performance wall before the shallow Greedies end section. It is one of Bali's most consistent barrel waves but demands accurate positioning and strong reef experience.",
+  "hazards": [
+    "sharp shallow reef",
+    "heavy local and travelling surfer crowd",
+    "steep takeoff",
+    "dangerous Greedies end section",
+    "difficult entry and exit on lower tides"
+  ]
+}

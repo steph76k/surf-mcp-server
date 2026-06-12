@@ -1,0 +1,41 @@
+{
+  "spot_id": "periscopes",
+  "name": "Periscopes",
+  "country": "Indonesia",
+  "island": "Sumbawa",
+  "region": "Central Sumbawa",
+  "coordinates": {
+    "lat": -8.78,
+    "lon": 118.37
+  },
+  "preferred_conditions": {
+    "swell": {
+      "directions": ["S", "SE", "SW", "W"],
+      "min_ft": 3,
+      "max_ft": 8
+    },
+    "wind": {
+      "offshore": ["N", "NE", "NW"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "right",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 5,
+    "localism": 2,
+    "risk": 5,
+    "fun": 8
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "Best with glassy or northerly wind and enough tide. Dry-season trades can blow it out, so mornings and light wind windows matter.",
+  "description": "Periscopes is a right-hand reef wave east of the main Lakey Peak area. It peels along a reef platform into a channel, offering fast rippable walls and barrel sections without the same intensity as Lakey Peak or Lakey Pipe. It is a good progression wave for confident intermediates moving toward hollower reef breaks.",
+  "hazards": [
+    "sharp reef",
+    "channel can close out on bigger swells",
+    "fast sections",
+    "exposed to dry-season trade wind"
+  ]
+}

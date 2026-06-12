@@ -1,0 +1,42 @@
+{
+  "spot_id": "nungas",
+  "name": "Nungas",
+  "country": "Indonesia",
+  "island": "Sumbawa",
+  "region": "Central Sumbawa",
+  "coordinates": {
+    "lat": -8.81,
+    "lon": 118.386
+  },
+  "preferred_conditions": {
+    "swell": {
+      "directions": ["S", "SE", "SW"],
+      "min_ft": 3,
+      "max_ft": 10
+    },
+    "wind": {
+      "offshore": ["E", "NE"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 5,
+    "localism": 2,
+    "risk": 6,
+    "fun": 8
+  },
+  "surfer_level": ["intermediate", "advanced"],
+  "notes": "A long left in the Lakey area. Some guides call all tides workable, but mid to high tide is the safer default because of reef exposure and current.",
+  "description": "Nungas is a long left-hand reef and point style wave near Lakey Peak. It is often described as a more relaxed, drawn-out alternative to the heavier Lakey reefs, with workable walls, bowl sections and occasional barrels. On the best swells the sections can link into very long rides, but the break is less intense and usually less crowded than Lakey Peak or Pipe.",
+  "hazards": [
+    "strong current",
+    "sharp reef",
+    "long paddle",
+    "bigger days become serious",
+    "sections can outrun surfers"
+  ]
+}

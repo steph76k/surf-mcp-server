@@ -69,7 +69,7 @@ class SpotsTest(unittest.TestCase):
         spots = [
             spot
             for spot in get_all_spots()
-            if spot["region"] == "Lakey"
+            if spot["region"] == "Central Sumbawa"
         ]
 
         self.assertGreater(

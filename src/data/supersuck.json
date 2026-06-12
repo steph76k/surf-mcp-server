@@ -1,0 +1,42 @@
+{
+  "spot_id": "supersuck",
+  "name": "Supersuck",
+  "country": "Indonesia",
+  "island": "Sumbawa",
+  "region": "West Sumbawa",
+  "coordinates": {
+    "lat": -8.94,
+    "lon": 116.74
+  },
+  "preferred_conditions": {
+    "swell": {
+      "directions": ["SW", "W"],
+      "min_ft": 4,
+      "max_ft": 10
+    },
+    "wind": {
+      "offshore": ["E", "SE"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 5,
+    "localism": 2,
+    "risk": 8,
+    "fun": 9
+  },
+  "surfer_level": ["advanced", "expert"],
+  "notes": "Low tide is too shallow and should be avoided. Needs a solid SW groundswell and enough water over the reef.",
+  "description": "Supersuck is a powerful left-hand reef barrel in Maluk Bay, West Sumbawa. When the swell and tide line up it bends and sucks hard off the reef, producing fast technical barrels and long left-hand walls before tapering into deeper water. It is fickle but one of the standout waves in West Sumbawa when it turns on.",
+  "hazards": [
+    "very shallow sharp reef",
+    "technical fast takeoff",
+    "narrow takeoff zone",
+    "dangerous at low tide",
+    "limited nearby surf shops or repairs"
+  ]
+}

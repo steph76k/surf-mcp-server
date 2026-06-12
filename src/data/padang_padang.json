@@ -1,0 +1,42 @@
+{
+  "spot_id": "padang_padang",
+  "name": "Padang Padang",
+  "country": "Indonesia",
+  "island": "Bali",
+  "region": "Bukit",
+  "coordinates": {
+    "lat": -8.81,
+    "lon": 115.10
+  },
+  "preferred_conditions": {
+    "swell": {
+      "directions": ["S", "SSW", "SW"],
+      "min_ft": 6,
+      "max_ft": 12
+    },
+    "wind": {
+      "offshore": ["SE", "E"]
+    },
+    "tide": ["mid", "high"]
+  },
+  "wave": {
+    "direction": "left",
+    "type": "reef"
+  },
+  "ratings": {
+    "crowd": 10,
+    "localism": 10,
+    "risk": 9,
+    "fun": 10
+  },
+  "surfer_level": ["advanced", "expert"],
+  "notes": "Also called Padang Padang Lefts. Needs a solid SW/SSW swell to turn on; higher tides are safer, while low tide is heavier and more critical.",
+  "description": "Padang Padang is Bali's famous left-hand barrel, often called the Balinese Pipeline. It breaks from deep water onto a shallow reef under the cliff at Padang Padang beach and can produce multiple barrel sections before releasing into the channel. It is a world-class wave but only suitable for skilled surfers when the swell is large enough.",
+  "hazards": [
+    "very sharp reef",
+    "heavy hollow barrels",
+    "crowded with expert surfers",
+    "strong current if caught inside",
+    "dangerous shallow end section"
+  ]
+}
